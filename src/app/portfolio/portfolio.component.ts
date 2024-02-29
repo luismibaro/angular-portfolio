@@ -16,6 +16,12 @@ export class PortfolioComponent implements OnInit{
 
   isCollapsed: boolean = true;
   typescript: boolean = false;
+  python: boolean = false;
+  java: boolean = false;
+  nodejs: boolean = false;
+  angular: boolean = false;
+  javascript: boolean = false; 
+  filtering: boolean = false;
 
   constructor(private titleService: Title, private projectService: ProjectsService) {
       this.titleService.setTitle('Luis Barrera - Portfolio');
@@ -27,6 +33,46 @@ export class PortfolioComponent implements OnInit{
   Filter(){
     let filterTags: Tag[] = [];
 
+    if(this.typescript){
+      filterTags.push(Tag.TYPESCRIPT);
+    }
+    if(this.python){
+      filterTags.push(Tag.PYTHON);
+    }
+    if(this.java){
+      filterTags.push(Tag.JAVA);
+    }
+    if(this.nodejs){
+      filterTags.push(Tag.NODEJS);
+    }
+    if(this.angular){
+      filterTags.push(Tag.ANGULAR);
+    }
+    if(this.javascript){
+      filterTags.push(Tag.JAVASCRIPT);
+    }
+
+    if(this.python || this.javascript || this.java || this.typescript || this.nodejs || this.angular) {
+      this.filtering = true;
+    }
+    else{
+      this.filtering = false;
+    }
+
     this.projects = this.projectService.GetProjectsByFilter(filterTags);
   }
+
+    ResetFilters(){
+      this.typescript = false;
+      this.java = false;
+      this.javascript = false;
+      this.python = false;
+      this.angular = false;
+      this.nodejs = false;
+      this.filtering = false;
+      
+      this.projects = this.projectService.GetProjects();
+    }
+
+  
 }

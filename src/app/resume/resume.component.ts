@@ -8,6 +8,11 @@ import { Title } from '@angular/platform-browser';
 })
 export class ResumeComponent {
 
+  isWorkExperienceOpen: boolean = false;
+  isEducationOpen: boolean = false;
+  isCertificationsOpen: boolean = false;
+  isSkillsOpen: boolean = false;
+
   constructor(private titleService: Title, private renderer: Renderer2) {
     this.titleService.setTitle('Luis M. Barrera R. - Resume');
   }

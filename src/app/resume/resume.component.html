@@ -1,23 +1,108 @@
 <div class="container text-center">
     <button (click)="DownloadFile()" class="btn btn-primary mb-5 shadow border">Download PDF Resume</button>
-    <accordion>
-        <accordion-group heading="Work Experience">
 
-        </accordion-group>
-    </accordion>
-    <accordion>
-        <accordion-group heading="Education">
+    <div class="pb-2">
+        <accordion [isAnimated]="true" class="shadow">
+            <accordion-group [(isOpen)]="isWorkExperienceOpen">
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
+                    <div style="visibility: hidden;"></div>
+                    <div class="btn-link">Work Experience</div>
 
-        </accordion-group>
-    </accordion>
-    <accordion>
-        <accordion-group heading="Certifications">
+                    <div style="width: 10.95px;">
+                        <div *ngIf="!isWorkExperienceOpen" style="color: white;">></div>
+                        <div *ngIf="isWorkExperienceOpen" style="color: white;">v</div>
+                    </div>
+                </button>
 
-        </accordion-group>
-    </accordion>
-    <accordion>
-        <accordion-group heading="Skills">
+                <div style="text-align: left;">
+                    <h3 class="mb-0">Telecommunication Technician.</h3><h5>2017-2023</h5>
+                    <h3 class="mb-0">Trainee Machine Learning Developer. </h3><h5>2021</h5>
+                    <h3 class="mb-0">Network Operator.</h3><h5>2015-2017</h5>
+                </div>
 
-        </accordion-group>
-    </accordion>
+            </accordion-group>
+        </accordion>
+        <accordion [isAnimated]="true" class="shadow">
+            <accordion-group [(isOpen)]="isEducationOpen">
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
+                    <div style="visibility: hidden;"></div>
+                    <div class="btn-link">Education</div>
+
+                    <div style="width: 10.95px;">
+                        <div *ngIf="!isEducationOpen" style="color: white;">></div>
+                        <div *ngIf="isEducationOpen" style="color: white;">v</div>
+                    </div>
+                </button>
+
+                <div style="text-align: left;">
+                    <h3 class="mb-0">Vocational training</h3>
+                    <h4 class="text-primary">Higuer Technician in Development of Web Applicactions.</h4>
+                    <h5>2022-2024</h5>
+                    <h4 class="text-primary">Higuer Techinician in Telecommunication and Computer Systems.</h4>
+                    <h5>2013-2015</h5>
+                </div>
+            </accordion-group>
+        </accordion>
+        <accordion [isAnimated]="true" class="shadow">
+            <accordion-group [(isOpen)]="isCertificationsOpen">
+                 <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
+                    <div style="visibility: hidden;"></div>
+                    <div class="btn-link">Certifications</div>
+
+                    <div style="width: 10.95px;">
+                        <div *ngIf="!isCertificationsOpen" style="color: white;">></div>
+                        <div *ngIf="isCertificationsOpen" style="color: white;">v</div>
+                    </div>
+                </button>
+
+                <div style="text-align: left;">
+                    <h4>Google IT Support Professional Certificate.</h4><h5>2023</h5><h6>Credential ID: V4J2TXNTG6SU</h6>
+                    <h4>Cisco CCNA</h4>
+                </div>
+            </accordion-group>
+        </accordion>
+        <accordion [isAnimated]="true" class="shadow">
+            <accordion-group [(isOpen)]="isSkillsOpen">
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
+                    <div style="visibility: hidden;"></div>
+                    <div class="btn-link">Skills</div>
+
+                    <div style="width: 10.95px;">
+                        <div *ngIf="!isSkillsOpen" style="color: white;">></div>
+                        <div *ngIf="isSkillsOpen" style="color: white;">v</div>
+                    </div>
+                </button>
+
+                <div class="row" style="text-align: left;">
+                    <div class="col">
+                        <h4>Programming Languages:</h4>
+                        <ul>
+                            <li>Java</li>
+                            <li>JavaScript</li>
+                            <li>TypeScript</li>
+                            <li>Python</li>
+                            <li>PHP</li> 
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h4>Frameworks:</h4>   
+                        <ul>
+                            <li>Angular</li>
+                            <li>Node.js</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h4>Other Skills:</h4>
+                        <ul>
+                            <li>GIT</li>
+                            <li>MVC Arquitecture</li>
+                            <li>Scrum agile framework</li>
+                            <li>Oracle Database</li>
+                            <li>MongoDB</li>
+                        </ul>
+                    </div>
+                </div> 
+            </accordion-group>
+        </accordion>
+    </div>
 </div>
